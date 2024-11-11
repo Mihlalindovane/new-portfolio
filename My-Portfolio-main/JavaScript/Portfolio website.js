@@ -10,3 +10,17 @@ document.querySelector('#message').value = '';
 });
 
 
+
+
+document.querySelectorAll('.clickable-img').forEach(img => {
+  img.addEventListener('click', function () {
+    const overlay = document.getElementById('imageOverlay');
+    const overlayImg = document.getElementById('overlayImg');
+    overlayImg.src = this.src;
+    overlay.style.display = 'flex';
+  });
+});
+
+document.querySelector('.close-overlay').addEventListener('click', function () {
+  document.getElementById('imageOverlay').style.display = 'none';
+});

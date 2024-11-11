@@ -67,9 +67,9 @@ h1 {
 .introduction {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center-align content */
+  align-items: center; 
   padding: 40px;
-  background-color: #1b1b1b; /* Dark background to match theme */
+  background-color: #1b1b1b; 
   color: #f2f2f2;
   text-align: center;
 }
@@ -157,141 +157,181 @@ h2, h3 {
 }
 
 
-/* Projects Section */
+/* Projects Section Layout - Masonry Grid */
 .projects {
-  padding: 40px 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 40px;
-  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  gap: 20px;
+  padding: 40px;
   background-color: #1b1b1b;
-  max-width: 1600px;
-  margin: 0 auto;
+  justify-items: center;
 }
 
-/* Project Card */
 .project-card {
   background-color: #F8BBD0;
   border-radius: 10px;
-  padding: 30px;
-  min-width: 450px;
-  max-width: 600px;
-  height: fit-content;
-  transition: transform 0.3s, background-color 0.3s;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
-}
-
-.project-card:hover {
-  background-color: #ffccbc;
-  transform: translateY(-5px);
-}
-
-/* Card Header Image */
-.project-card > img:first-of-type {
+  padding: 20px;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  text-align: center;
+  transition: transform 0.3s;
 }
 
-/* Project Title */
+/* Stagger the cards to create the masonry effect */
+.project-card:nth-child(1) { grid-row: span 2; }
+.project-card:nth-child(2) { grid-row: span 1; }
+.project-card:nth-child(3) { grid-column: span 2; }
+
 .project-card h3 {
   color: #333;
   font-size: 1.75rem;
-  margin-bottom: 15px;
-  padding: 15px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
+  background-color: #fff;
+  padding: 10px;
   border-radius: 8px;
 }
 
-/* Project Description */
 .project-card ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.project-card li {
+  text-align: left;
   color: #333;
-  margin-bottom: 15px;
-  line-height: 1.6;
   font-size: 1.1rem;
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
-/* Gallery Images */
+/* Gallery Styling */
 .gallery {
   display: flex;
-  gap: 15px;
+  gap: 10px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 20px;
 }
 
 .gallery img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 8px;
-  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
 }
 
 /* Live Demo Button */
 .live-demo-button {
   display: inline-block;
   width: 100%;
-  padding: 15px 30px;
+  padding: 10px;
   background-color: #ff007f;
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
-  transition: background-color 0.3s, transform 0.2s;
-  text-align: center;
+  font-size: 1rem;
   font-weight: 500;
-  font-size: 1.1rem;
-  margin-top: 20px;
-  border: none;
-  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s;
 }
 
 .live-demo-button:hover {
   background-color: #ff3399;
-  transform: translateY(-2px);
+}
+
+/* Image Overlay for Enlarged View */
+.image-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.image-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+
+.close-overlay {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
 }
 
 /* Responsive Design */
-@media (max-width: 1400px) {
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .projects {
     grid-template-columns: 1fr;
   }
-  
+
   .project-card {
-    min-width: 300px;
-    max-width: 100%;
+    width: 100%;
   }
 }
 
-@media (max-width: 500px) {
-  .project-card {
-    min-width: unset;
-    padding: 20px;
+
+
+/* About me page styling*/
+
+.about-me-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Section Heading */
+.about-me-container h2 {
+  font-size: 1.8rem;
+  color: #ff007f;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Section Layout */
+.section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+/* Image Styling */
+.section img.section-picture {
+  width: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Text Styling */
+.section p {
+  flex: 1;
+  text-align: justify;
+  font-size: 1rem;
+  color: hsla(0, 18%, 93%, 0.938);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
   }
-  
-  .project-card h3 {
-    font-size: 1.5rem;
+
+  .section img.section-picture {
+    width: 100%;
+    max-width: 200px;
   }
-  
-  .gallery img {
-    width: 80px;
-    height: 80px;
-  }
+}
+
+img1 {
+  width: 500px;
+  height: 300px;
 }
