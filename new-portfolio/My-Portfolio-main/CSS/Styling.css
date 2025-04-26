@@ -43,6 +43,7 @@ h1 {
   gap: 16px;
   padding-top: 50px;
   padding-bottom: 50px;
+  text-decoration: none;
 }
 
 .nav-list li {
