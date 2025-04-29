@@ -1,0 +1,126 @@
+/* Skills Section Styling */
+.skills {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    background: rgba(25, 25, 25, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+  
+  .skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ff3d7f, transparent);
+  }
+  
+  .skills::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 61, 127, 0.08), transparent 70%);
+    border-radius: 50%;
+    bottom: -200px;
+    right: -200px;
+    z-index: -1;
+  }
+  
+  .skills h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(45deg, #ff3d7f, #ff9e7f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation-delay: 0.2s;
+  }
+  
+  .skills h2::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(45deg, #ff3d7f, #ff9e7f);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+  
+  .skills ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .skills ul li {
+    margin-bottom: 1.2rem;
+    padding: 1rem 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border-left: 3px solid rgba(255, 61, 127, 0.5);
+    color: #ddd;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: calc(0.4s + var(--i, 0) * 0.1s);
+  }
+  
+  .skills ul li:hover {
+    transform: translateX(10px);
+    background: rgba(255, 61, 127, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .skills ul li:nth-child(1) { --i: 1; }
+  .skills ul li:nth-child(2) { --i: 2; }
+  .skills ul li:nth-child(3) { --i: 3; }
+  .skills ul li:nth-child(4) { --i: 4; }
+  .skills ul li:nth-child(5) { --i: 5; }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .skills {
+      padding: 1.5rem;
+      margin: 3rem auto;
+    }
+    
+    .skills h2 {
+      font-size: 2rem;
+    }
+    
+    .skills ul li {
+      font-size: 1rem;
+      padding: 0.8rem 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .skills {
+      padding: 1rem;
+      margin: 2rem auto;
+    }
+    
+    .skills h2 {
+      font-size: 1.8rem;
+    }
+    
+    .skills ul li {
+      font-size: 0.9rem;
+      padding: 0.7rem 1rem;
+      margin-bottom: 0.8rem;
+    }
+  }
