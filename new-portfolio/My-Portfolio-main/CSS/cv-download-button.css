@@ -1,0 +1,24 @@
+/* Button Styles */
+.cv-download-button {
+    background-color: #4CAF50;  /* Green background color */
+    color: white;               /* White text color */
+    font-size: 16px;            /* Font size */
+    padding: 12px 24px;         /* Padding around the text */
+    border: none;               /* Remove default border */
+    border-radius: 8px;         /* Rounded corners */
+    cursor: pointer;           /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  /* Hover Effect */
+  .cv-download-button:hover {
+    background-color: #45a049;  /* Slightly darker green on hover */
+    transform: translateY(-2px);  /* Slight lift effect on hover */
+  }
+  
+  /* Focus Effect (when button is clicked or focused) */
+  .cv-download-button:focus {
+    outline: none;  /* Remove default focus outline */
+    box-shadow: 0 0 5px 2px rgba(72, 172, 92, 0.5);  /* Soft green glow around the button */
+  }
+  
